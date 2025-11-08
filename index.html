@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Kumar - Professional Laptop Repair Services | College Campus</title>
+    <meta name="description" content="Expert laptop repair services by Aman Kumar. 2.5+ years experience, 1000+ laptops repaired. Fast, affordable campus service with 30-day warranty.">
+    <meta name="keywords" content="laptop repair, computer service, virus removal, screen replacement, college laptop repair, Aman Kumar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* PRE-LOADER */
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+
+        .loader-content i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .loader-content p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .loading-bar {
+            width: 100px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loading-bar::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 100%;
+            background: white;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes loading {
+            0% { transform: translateX(-40px); }
+            100% { transform: translateX(100px); }
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s, background 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* MOBILE CORNER ICONS (opposite to logo) */
+        .mobile-menu {
+            display: none;
+            font-size: 18px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            padding: 5px;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .mobile-menu i {
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            font-size: 13px;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 0.98rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            opacity: 0.9;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #2980b9;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-height: 280px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+            border: 2px solid var(--secondary);
+        }
+
+        .search-result-item {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .search-result-item:hover {
+            background: #f5f9ff;
+            transform: translateX(4px);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .result-title {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .result-desc {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .result-price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .section-title h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.88rem;
+        }
+
+        /* CATEGORIES / PROBLEMS */
+        .categories {
+            padding: 25px 0;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 7px 14px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.78rem;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .tab-btn:hover:not(.active) {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .problem-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            animation: fadeIn 0.35s ease-out;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+        }
+
+        .problem-image {
+            height: 150px;
+            background: var(--light);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .problem-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: auto;
+            transition: transform 0.3s ease, filter 0.2s ease;
+        }
+
+        .problem-card:hover .problem-image img {
+            transform: scale(1.04);
+            filter: none;
+        }
+
+        .problem-content {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .problem-content h3 {
+            margin-bottom: 6px;
+            color: var(--primary);
+            font-size: 0.98rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .problem-content p {
+            color: #7f8c8d;
+            font-size: 0.78rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .problem-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .problem-price {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.78rem;
+            transition: background 0.25s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        .show-more {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .show-more-btn,
+        .show-less-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.84rem;
+            margin: 0 4px;
+            transition: background 0.25s;
+        }
+
+        .show-less-btn {
+            background: var(--accent);
+        }
+
+        .show-more-btn:hover {
+            background: #1a252f;
+        }
+
+        .show-less-btn:hover {
+            background: #c0392b;
+        }
+
+        /* SERVICES */
+        .services {
+            background: var(--light);
+            padding: 25px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 6px;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 30px 0;
+            background: white;
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .about-text h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .about-text p {
+            font-size: 0.88rem;
+            max-width: 750px;
+            margin: 0 auto 14px;
+            color: #555;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .stat {
+            padding: 10px;
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .stat-text {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 30px 0;
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .contact-details {
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+        }
+
+        .contact-icon {
+            width: 34px;
+            height: 34px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .contact-form h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.78rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 0.84rem;
+            transition: background 0.25s;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 24px 0 14px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-column h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 32px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-column p,
+        .footer-links li {
+            font-size: 0.78rem;
+            opacity: 0.85;
+            margin-bottom: 6px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.25s;
+            font-size: 0.78rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .social-links a {
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.12);
+            border-radius: 50%;
+            color: white;
+            font-size: 0.78rem;
+            transition: background 0.25s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 8px;
+            font-size: 0.75rem;
+            opacity: 0.75;
+        }
+
+        /* FLOATING WHATSAPP QUICK HELP */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+            transition: all 0.3s;
+            animation: float 3s infinite;
+            font-size: 0.85rem;
+        }
+
+        .whatsapp-float i {
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: translateY(-4px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 70px;
+            }
+
+            .header-content {
+                gap: 10px;
+            }
+
+            /* Show corner icons, hide desktop nav initially */
+            .mobile-menu {
+                display: inline-flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 15px;
+                background: var(--primary);
+                width: 180px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+                padding: 8px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li a {
+                padding: 8px 14px;
+                display: block;
+                font-size: 0.82rem;
+            }
+
+            .hero {
+                padding: 28px 0 22px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.86rem;
+            }
+
+            .categories,
+            .services,
+            .about,
+            .contact {
+                padding: 22px 0;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .floating-whatsapp {
+                bottom: 18px;
+                right: 18px;
+            }
+
+            .whatsapp-float {
+                padding: 12px;
+                border-radius: 50%;
+                width: 54px;
+                height: 54px;
+                justify-content: center;
+            }
+
+            .whatsapp-float span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-bottom: 78px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Pre-loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <i class="fas fa-laptop-code"></i>
+            <p>Aman Repairs</p>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-laptop-code logo-icon"></i>
+                    <div class="logo-text">Aman<span>Repairs</span></div>
+                </div>
+                <!-- Mobile corner icons: toggle menu -->
+                <button class="mobile-menu" aria-label="Toggle navigation">
+                    <i class="fas fa-home"></i>
+                    <i class="fas fa-tools"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-envelope"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Expert Laptop Repair Services</h1>
+            <p>Fast, reliable, and affordable solutions for all your laptop problems. 1000+ laptops repaired with professional on-campus service.</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="problem-search"
+                        placeholder="Type your issue: blue screen, no display, slow laptop..."
+                    >
+                    <button type="button"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="search-results" id="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories / Problems (Services) -->
+    <section class="categories" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Laptop Repair Services</h2>
+                <p>Browse through 74+ common laptop problems with clear pricing and quick WhatsApp connect.</p>
+            </div>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All Problems</button>
+                <button class="tab-btn" data-category="emergency">Emergency</button>
+                <button class="tab-btn" data-category="software">Software</button>
+                <button class="tab-btn" data-category="hardware">Hardware</button>
+            </div>
+
+            <div class="problems-grid" id="problems-container"></div>
+
+            <div class="show-more">
+                <button class="show-more-btn" id="show-more-btn">Show More</button>
+                <button class="show-less-btn" id="show-less-btn" style="display:none;">Show Less</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Summary -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Services</h2>
+                <p>All major software and hardware issues covered with student-friendly pricing.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-tools service-icon"></i>
+                    <h3>Hardware Repair</h3>
+                    <p>Screen, keyboard, hinges, charging port, battery and more.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-desktop service-icon"></i>
+                    <h3>Software Solutions</h3>
+                    <p>Windows install, slow PC fix, drivers, MS Office, virus cleanup.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bolt service-icon"></i>
+                    <h3>Emergency Fix</h3>
+                    <p>No display, no power, blue screen, boot failure and urgent data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm Aman Kumar — B.Tech (Cyber Security) student & former Lenovo Technical Support Engineer with 2.5+ years of experience. I’ve successfully repaired 1000+ laptops and provide honest, reliable repair services directly in college campus & hostels.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">2.5+</div>
+                            <div class="stat-text">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-text">Laptops Repaired</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">74+</div>
+                            <div class="stat-text">Issues Covered</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">9AM-9PM</div>
+                            <div class="stat-text">Daily Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Explain your problem in a few words and get a quick response.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>On-campus, quick and genuine repair for students. No unnecessary part change, clear communication.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Service Area</h4>
+                                <p>College Campus & Hostels, West Champaran</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-text">
+                                <h4>Phone / WhatsApp</h4>
+                                <p>+91 8228013326</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>kumaraman60526@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-text">
+                                <h4>Service Hours</h4>
+                                <p>9:00 AM - 9:00 PM (Every Day)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Quick Service Request</h3>
+                    <form id="service-request-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="problem">Laptop Problem</label>
+                            <select id="problem">
+                                <option value="">Select a problem</option>
+                                <option value="Blue Screen">Blue Screen</option>
+                                <option value="Not Starting">Laptop Not Starting</option>
+                                <option value="No Display">No Display / Black Screen</option>
+                                <option value="Not Charging">Not Charging</option>
+                                <option value="Overheating">Overheating</option>
+                                <option value="Virus">Virus & Malware</option>
+                                <option value="Slow Performance">Slow Performance</option>
+                                <option value="Other">Other Problem</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" placeholder="Describe your laptop problem..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Request on WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Aman Repairs</h3>
+                    <p>Trusted laptop repair for college students with expert-level diagnostics and support.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aman-kumar-473136335" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100072858997151" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/shaliesh93174" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/shalieshkumar60526/#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li>Emergency Repairs</li>
+                        <li>Software Solutions</li>
+                        <li>Hardware Repairs</li>
+                        <li>Data Recovery</li>
+                        <li>Virus Removal</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> College Campus & Hostels, West Champaran</li>
+                        <li><i class="fas fa-phone"></i> +91 8228013326</li>
+                        <li><i class="fas fa-envelope"></i> kumaraman60526@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM (Every Day)</li>
+                        <li><i class="fas fa-money-bill"></i> Cash, UPI, PhonePe</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Aman Kumar - Laptop Repair Services. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Quick Help -->
+    <div class="floating-whatsapp">
+        <a
+            href="https://api.whatsapp.com/send?phone=918228013326&text=Hello%20Aman%2C%20I%20need%20help%20with%20my%20laptop%20repair"
+            class="whatsapp-float"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp with Aman for laptop repair"
+            title="Chat on WhatsApp with Aman for laptop repair"
+        >
+            <i class="fab fa-whatsapp"></i>
+            <span>Quick Help</span>
+        </a>
+    </div>
+
+    <script>
+        const problems = [
+            // EMERGENCY (15)
+            { id: 1, title: "Blue Screen (BSOD) Fix", description: "Critical system error causing blue screen crashes.", category: "emergency", price: "₹499", image: "https://i.ibb.co/b5kfWnR2/Blue-Screen-BSOD-Fix.jpg" },
+            { id: 2, title: "Laptop Not Starting", description: "No power, no lights, completely unresponsive.", category: "emergency", price: "₹699", image: "https://i.ibb.co/sv2w6NN8/Laptop-Not-Starting.jpg" },
+            { id: 3, title: "No Display / Black Screen", description: "Laptop turns on but screen remains black.", category: "emergency", price: "₹599", image: "https://i.ibb.co/jk0t1G7R/No-Display-Black-Screen.jpg" },
+            { id: 4, title: "Not Charging", description: "Laptop doesn't charge or recognize charger.", category: "emergency", price: "₹599", image: "https://i.ibb.co/qMQbsJvc/Not-Charging.jpg" },
+            { id: 5, title: "Overheating & Auto Shutdown", description: "Laptop gets too hot and turns off automatically.", category: "emergency", price: "₹499", image: "https://i.ibb.co/Jw4KzwPg/Overheating-Auto-Shutdown.jpg" },
+            { id: 6, title: "Automatic Shutdown Fix", description: "Laptop shuts down randomly without warning.", category: "emergency", price: "₹599", image: "https://i.ibb.co/Lhqk1QBz/Automatic-Shutdown-Fix.jpg" },
+            { id: 7, title: "Random Restart Issue", description: "System restarts unexpectedly during use.", category: "emergency", price: "₹699", image: "https://i.ibb.co/zWLkYYj4/Random-Restart-Issue.jpg" },
+            { id: 8, title: "Power Button Not Working", description: "Power button unresponsive or stuck.", category: "emergency", price: "₹699", image: "https://i.ibb.co/3yWndMb3/Power-Button-Not-Working.jpg" },
+            { id: 9, title: "Battery Not Detected", description: "Laptop doesn't recognize installed battery.", category: "emergency", price: "₹499", image: "https://i.ibb.co/k2MwVxX6/Battery-Not-Detected.jpg" },
+            { id: 10, title: "Emergency Data Recovery", description: "Urgent data retrieval from damaged drive.", category: "emergency", price: "₹1499", image: "https://i.ibb.co/D2r807C/Emergency-Data-Recovery.jpg" },
+            { id: 11, title: "Liquid Damage Emergency", description: "Repair after liquid spill on laptop.", category: "emergency", price: "₹1999", image: "https://i.ibb.co/v61Zp2zt/Liquid-Damage-Emergency.jpg" },
+            { id: 12, title: "Motherboard Emergency", description: "Critical motherboard component failure.", category: "emergency", price: "₹1499", image: "https://i.ibb.co/39BMbF2P/Motherboard-Emergency.jpg" },
+            { id: 13, title: "Critical Virus Attack", description: "Severe malware infection damaging system.", category: "emergency", price: "₹899", image: "https://i.ibb.co/gLS6CPN8/Critical-Virus-Attack.jpg" },
+            { id: 14, title: "Data Corruption Emergency", description: "Critical file system corruption issues.", category: "emergency", price: "₹1299", image: "https://i.ibb.co/QvGGb3q2/Data-Corruption-Emergency.jpg" },
+            { id: 15, title: "Boot Failure Emergency", description: "System fails to boot into OS.", category: "emergency", price: "₹799", image: "https://i.ibb.co/7JsZRVFL/Boot-Failure-Emergency.jpg" },
+
+            // SOFTWARE (30)
+            { id: 16, title: "Laptop Speed Optimization", description: "Tuning system for maximum performance.", category: "software", price: "₹349", image: "https://i.ibb.co/xqpXJHhf/Laptop-Speed-Optimization.jpg" },
+            { id: 17, title: "Virus & Malware Removal", description: "Complete virus and malware cleanup.", category: "software", price: "₹299", image: "https://i.ibb.co/mVXnfLrN/Virus-Malware-Removal.jpg" },
+            { id: 18, title: "Windows Installation", description: "Fresh OS installation with drivers.", category: "software", price: "₹399", image: "https://i.ibb.co/6RMsdmPK/Windows-Installation.jpg" },
+            { id: 19, title: "WiFi Connectivity Issues", description: "Fixing wireless network problems.", category: "software", price: "₹349", image: "https://i.ibb.co/Z1GWF785/WiFi-Connectivity-Issues.jpg" },
+            { id: 20, title: "Data Recovery", description: "Retrieving lost or deleted files.", category: "software", price: "₹799", image: "https://i.ibb.co/zWmx3kyq/Data-Recovery.jpg" },
+            { id: 21, title: "Software Installation", description: "Installing required applications.", category: "software", price: "₹149 / software", image: "https://i.ibb.co/JRhkF6Nv/Software-Installation.jpg" },
+            { id: 22, title: "Driver Installation", description: "Installing and updating device drivers.", category: "software", price: "₹249", image: "https://i.ibb.co/mfqWYyF/Driver-Installation.jpg" },
+            { id: 23, title: "Microsoft Office Setup", description: "Installing and configuring MS Office.", category: "software", price: "₹299", image: "https://i.ibb.co/pvprwqBg/Microsoft-Office-Setup.jpg" },
+            { id: 24, title: "Antivirus Installation", description: "Setting up security software.", category: "software", price: "₹199", image: "https://i.ibb.co/CLm4MPN/Antivirus-Installation.jpg" },
+            { id: 25, title: "Boot Problems Repair", description: "Fixing startup and boot issues.", category: "software", price: "₹599", image: "https://i.ibb.co/LKcDdFQ/Boot-Problems-Repair.jpg" },
+            { id: 26, title: "Password Recovery", description: "Regaining access to locked system.", category: "software", price: "₹699", image: "https://i.ibb.co/QjzwLbgz/Password-Recovery.jpg" },
+            { id: 27, title: "File System Repair", description: "Fixing corrupted file system errors.", category: "software", price: "₹499", image: "https://i.ibb.co/kVDJZ5Bp/File-System-Repair.jpg" },
+            { id: 28, title: "Registry Repair", description: "Fixing Windows registry issues.", category: "software", price: "₹449", image: "https://i.ibb.co/DDw2mN5G/Registry-Repair.jpg" },
+            { id: 29, title: "Startup Optimization", description: "Reducing system startup time.", category: "software", price: "₹349", image: "https://i.ibb.co/1G1ZW1q7/Startup-Optimization.jpg" },
+            { id: 30, title: "Gaming Optimization", description: "Optimizing system for gaming performance.", category: "software", price: "₹499", image: "https://i.ibb.co/6ctMPwRC/Gaming-Optimization.jpg" },
+            { id: 31, title: "Bluetooth Setup", description: "Configuring Bluetooth connectivity.", category: "software", price: "₹249", image: "https://i.ibb.co/5gML56Wf/Bluetooth-Setup.jpg" },
+            { id: 32, title: "Internet Configuration", description: "Setting up network and internet.", category: "software", price: "₹299", image: "https://i.ibb.co/LzygcWFz/Internet-Configuration.jpg" },
+            { id: 33, title: "Printer Setup", description: "Configuring wireless or USB printing.", category: "software", price: "₹349", image: "https://i.ibb.co/RGgwTqKh/Printer-Setup.jpg" },
+            { id: 34, title: "Email Configuration", description: "Setting up email clients.", category: "software", price: "₹249", image: "https://i.ibb.co/mr3LcVWq/Email-Configuration.jpg" },
+            { id: 35, title: "OS Corruption Fix", description: "Repairing corrupted operating system.", category: "software", price: "₹599", image: "https://i.ibb.co/tw6LfTxN/OS-Corruption-Fix.jpg" },
+            { id: 36, title: "Application Crashes Fix", description: "Fixing frequently crashing applications.", category: "software", price: "₹399", image: "https://i.ibb.co/k234t36k/Application-Crashes-Fix.jpg" },
+            { id: 37, title: "Display Driver Issues", description: "Fixing graphics and display problems.", category: "software", price: "₹349", image: "https://i.ibb.co/SwpDycGS/Display-Driver-Issues.jpg" },
+            { id: 38, title: "Sound Driver Problems", description: "Fixing audio and sound issues.", category: "software", price: "₹349", image: "https://i.ibb.co/Hf2bVKvf/Sound-Driver-Problems.jpg" },
+            { id: 39, title: "Network Configuration", description: "Setting up network connections.", category: "software", price: "₹299", image: "https://i.ibb.co/W4N00wkK/Network-Configuration.jpg" },
+            { id: 40, title: "BIOS Issues Fix", description: "Resolving BIOS configuration problems.", category: "software", price: "₹499", image: "https://i.ibb.co/nq7WJ7j4/BIOS-Issues-Fix.jpg" },
+            { id: 41, title: "Date/Time Reset Fix", description: "Fixing system clock issues.", category: "software", price: "₹199", image: "https://i.ibb.co/kT1xYxn/Date-Time-Reset-Fix.jpg" },
+            { id: 42, title: "BIOS Password Reset", description: "Removing BIOS level passwords.", category: "software", price: "₹599", image: "https://i.ibb.co/S44ZSkKR/BIOS-Password-Reset.jpg" },
+            { id: 43, title: "Game Lagging Fix", description: "Optimizing system to reduce game lag.", category: "software", price: "₹449", image: "https://i.ibb.co/S7K7HybZ/Game-Lagging-Fix.jpg" },
+            { id: 44, title: "FPS Optimization", description: "Improving FPS in games.", category: "software", price: "₹399", image: "https://i.ibb.co/2pFLZjC/FPS-Optimization.jpg" },
+            { id: 45, title: "Streaming Setup", description: "Configuring system for live streaming.", category: "software", price: "₹499", image: "https://i.ibb.co/rVB2MSj/Streaming-Setup.jpg" },
+
+            // HARDWARE (29)
+            { id: 46, title: "Keyboard Repair", description: "Fixing unresponsive or damaged keys.", category: "hardware", price: "₹399", image: "https://i.ibb.co/N2sRvn1S/Keyboard-Repair.jpg" },
+            { id: 47, title: "Screen Replacement", description: "Installing new display panel.", category: "hardware", price: "₹799 + Parts", image: "https://i.ibb.co/wqKW515/Screen-Replacement.jpg" },
+            { id: 48, title: "Fan Noise & Cleaning", description: "Cleaning internal fans and reducing noise.", category: "hardware", price: "₹399", image: "https://i.ibb.co/j9SBGGWV/Fan-Noise-Cleaning.jpg" },
+            { id: 49, title: "Battery Replacement", description: "Installing new laptop battery.", category: "hardware", price: "₹299 + Battery", image: "https://i.ibb.co/n8sgbRC9/Battery-Replacement.jpg" },
+            { id: 50, title: "Hinge & Body Repair", description: "Fixing broken or loose hinges.", category: "hardware", price: "₹699", image: "https://i.ibb.co/rRRLzzsk/Hinge-Body-Repair.jpg" },
+            { id: 51, title: "Touchpad Repair", description: "Fixing cursor movement issues.", category: "hardware", price: "₹449", image: "https://i.ibb.co/bjmGXrnr/Touchpad-Repair.jpg" },
+            { id: 52, title: "USB Port Repair", description: "Fixing non-functional USB ports.", category: "hardware", price: "₹449", image: "https://i.ibb.co/WWwLz6WF/USB-Port-Repair.jpg" },
+            { id: 53, title: "Display Flickering Fix", description: "Eliminating screen flickering issues.", category: "hardware", price: "₹599", image: "https://i.ibb.co/chrHJXBP/Display-Flickering-Fix.jpg" },
+            { id: 54, title: "Camera/Webcam Repair", description: "Fixing webcam detection issues.", category: "hardware", price: "₹399", image: "https://i.ibb.co/sdM7cXnz/Camera-Webcam-Repair.jpg" },
+            { id: 55, title: "Speaker Repair", description: "Fixing audio output problems.", category: "hardware", price: "₹349", image: "https://i.ibb.co/XfXbtVQX/Speaker-Repair.jpg" },
+            { id: 56, title: "RAM Upgrade", description: "Increasing memory for better performance.", category: "hardware", price: "₹499 + RAM", image: "https://i.ibb.co/x8jdTCBv/RAM-Upgrade.jpg" },
+            { id: 57, title: "SSD Installation", description: "Installing faster solid state drive.", category: "hardware", price: "₹599 + SSD", image: "https://i.ibb.co/tMVYpB3Y/SSD-Installation.jpg" },
+            { id: 58, title: "HDD Replacement", description: "Replacing faulty hard disk drive.", category: "hardware", price: "₹499 + HDD", image: "https://i.ibb.co/DDbzCBSK/HDD-Replacement.jpg" },
+            { id: 59, title: "Charging Port Repair", description: "Fixing loose or broken charging port.", category: "hardware", price: "₹599", image: "https://i.ibb.co/PZFX9YjB/Charging-Port-Repair.jpg" },
+            { id: 60, title: "DC Jack Repair", description: "Repairing power input connector.", category: "hardware", price: "₹649", image: "https://i.ibb.co/tT7SPwS5/DC-Jack-Repair.jpg" },
+            { id: 61, title: "Adapter Repair", description: "Fixing laptop power adapter issues.", category: "hardware", price: "₹499", image: "https://i.ibb.co/4wnqnKTt/Adapter-Repair.jpg" },
+            { id: 62, title: "HDMI Port Repair", description: "Fixing external display connection.", category: "hardware", price: "₹549", image: "https://i.ibb.co/TM69JW4P/HDMI-Port-Repair.jpg" },
+            { id: 63, title: "Audio Jack Repair", description: "Fixing headphone/speaker jack issues.", category: "hardware", price: "₹449", image: "https://i.ibb.co/1GXgb3VW/Audio-Jack-Repair.jpg" },
+            { id: 64, title: "SD Card Reader Repair", description: "Fixing memory card reading issues.", category: "hardware", price: "₹499", image: "https://i.ibb.co/cc8djg55/SD-Card-Reader-Repair.jpg" },
+            { id: 65, title: "Fan Replacement", description: "Installing new cooling fan.", category: "hardware", price: "₹699 + Fan", image: "https://i.ibb.co/vtbKRnz/Fan-Replacement.jpg" },
+            { id: 66, title: "Heat Sink Repair", description: "Fixing CPU/GPU cooling system.", category: "hardware", price: "₹799", image: "https://i.ibb.co/8LM7zcvc/Heat-Sink-Repair.jpg" },
+            { id: 67, title: "Thermal Paste Application", description: "Applying new thermal compound.", category: "hardware", price: "₹349", image: "https://i.ibb.co/pVkNRns/Thermal-Paste-Application.jpg" },
+            { id: 68, title: "Webcam Replacement", description: "Installing new camera module.", category: "hardware", price: "₹599 + Webcam", image: "https://i.ibb.co/v4VX2mpq/Webcam-Replacement.jpg" },
+            { id: 69, title: "Microphone Repair", description: "Fixing audio input issues.", category: "hardware", price: "₹399", image: "https://i.ibb.co/PZJJgYqm/Microphone-Repair.jpg" },
+            { id: 70, title: "Hinge Replacement", description: "Replacing broken laptop hinges.", category: "hardware", price: "₹799 + Hinges", image: "https://i.ibb.co/DfmF41TK/Hinge-Replacement.jpg" },
+            { id: 71, title: "Body Damage Repair", description: "Fixing physical casing damage.", category: "hardware", price: "₹699", image: "https://i.ibb.co/67G7Shz6/Body-Damage-Repair.jpg" },
+            { id: 72, title: "Screen Frame Repair", description: "Fixing bezel and frame issues.", category: "hardware", price: "₹549", image: "https://i.ibb.co/wZPSbd6R/Screen-Frame-Repair.jpg" },
+            { id: 73, title: "Rubber Feet Replacement", description: "Replacing worn-out rubber feet.", category: "hardware", price: "₹199", image: "https://i.ibb.co/jvfYTnbZ/Rubber-Feet-Replacement.jpg" },
+            { id: 74, title: "Motherboard Diagnosis", description: "Comprehensive motherboard testing.", category: "hardware", price: "₹499", image: "https://i.ibb.co/g1xcYYn/Motherboard-Diagnosis.jpg" }
+        ];
+
+        const problemsContainer = document.getElementById('problems-container');
+        const showMoreBtn = document.getElementById('show-more-btn');
+        const showLessBtn = document.getElementById('show-less-btn');
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const searchInput = document.getElementById('problem-search');
+        const searchResults = document.getElementById('search-results');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('nav ul');
+        const serviceForm = document.getElementById('service-request-form');
+        const pageLoader = document.getElementById('pageLoader');
+
+        let currentCategory = 'all';
+        let displayedCount = 8;
+        const problemsPerLoad = 8;
+
+        function init() {
+            setTimeout(() => {
+                pageLoader.style.opacity = '0';
+                setTimeout(() => { pageLoader.style.display = 'none'; }, 400);
+            }, 800);
+
+            renderProblems();
+            setupEvents();
+        }
+
+        function setupEvents() {
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategory = btn.dataset.category;
+                    displayedCount = 8;
+                    searchInput.value = '';
+                    searchResults.style.display = 'none';
+                    renderProblems();
+                    scrollToElement('.categories');
+                });
+            });
+
+            showMoreBtn.addEventListener('click', () => {
+                displayedCount += problemsPerLoad;
+                renderProblems();
+            });
+
+            showLessBtn.addEventListener('click', () => {
+                displayedCount = 8;
+                renderProblems();
+                scrollToElement('.categories');
+            });
+
+            searchInput.addEventListener('input', handleSearch);
+
+            // Close search results & mobile nav when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.search-container')) {
+                    searchResults.style.display = 'none';
+                }
+                if (!e.target.closest('.mobile-menu') && !e.target.closest('nav ul')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+
+            // Mobile corner icons toggle menu
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', (e) => {
+                    // prevent document click from instantly closing
+                    e.stopPropagation();
+                    navMenu.classList.toggle('show');
+                });
+            }
+
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', (e) => {
+                    const target = a.getAttribute('href');
+                    if (target && target.startsWith('#')) {
+                        e.preventDefault();
+                        scrollToElement(target);
+                        navMenu.classList.remove('show');
+                    }
+                });
+            });
+
+            serviceForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const problem = document.getElementById('problem').value || 'Not specified';
+                const msg = document.getElementById('message').value.trim() || 'N/A';
+
+                const text = `Hello Aman, I need laptop repair service.%0A%0AName: ${name}%0APhone: ${phone}%0AProblem: ${problem}%0ADetails: ${msg}`;
+                const url = `https://api.whatsapp.com/send?phone=918228013326&text=${text}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+                serviceForm.reset();
+                alert('Service request ready! WhatsApp mein message open hoga.');
+            });
+        }
+
+        function scrollToElement(selector) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+            const headerOffset = 70;
+            const top = el.offsetTop - headerOffset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+
+        function getFilteredProblems() {
+            const term = searchInput.value.toLowerCase().trim();
+            return problems.filter(p => {
+                const catMatch = currentCategory === 'all' || p.category === currentCategory;
+                const searchMatch = !term ||
+                    p.title.toLowerCase().includes(term) ||
+                    p.description.toLowerCase().includes(term);
+                return catMatch && searchMatch;
+            });
+        }
+
+        function renderProblems() {
+            const filtered = getFilteredProblems();
+            problemsContainer.innerHTML = '';
+
+            if (!filtered.length) {
+                problemsContainer.innerHTML = '<p class="no-results">No matching problems found. Try different keywords.</p>';
+                showMoreBtn.style.display = 'none';
+                showLessBtn.style.display = 'none';
+                return;
+            }
+
+            const toShow = filtered.slice(0, displayedCount);
+            toShow.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'problem-card';
+                card.id = `problem-${p.id}`;
+                card.innerHTML = `
+                    <div class="problem-image">
+                        <img
+                            src="${p.image}"
+                            alt="${p.title}"
+                            loading="lazy"
+                            decoding="async"
+                            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 280 150%22%3E%3Crect width=%22280%22 height=%22150%22 fill=%22%23ecf0f1%22/%3E%3Ctext x%3D%2250%25%22 y%3D%2250%25%22 dominant-baseline%3D%22middle%22 text-anchor%3D%22middle%22 font-size%3D%2214%22 fill=%22%23999%22%3ENo%20image%3C/text%3E%3C/svg%3E'"
+                        >
+                    </div>
+                    <div class="problem-content">
+                        <h3>${p.title}</h3>
+                        <p>${p.description}</p>
+                        <div class="problem-meta">
+                            <div class="problem-price">${p.price}</div>
+                            <button class="whatsapp-btn" type="button" onclick="openWhatsApp('${p.title}')">
+                                <i class="fab fa-whatsapp"></i> Quick Help
+                            </button>
+                        </div>
+                    </div>
+                `;
+                problemsContainer.appendChild(card);
+            });
+
+            if (filtered.length > displayedCount) {
+                showMoreBtn.style.display = 'inline-block';
+            } else {
+                showMoreBtn.style.display = 'none';
+            }
+            showLessBtn.style.display = displayedCount > 8 ? 'inline-block' : 'none';
+        }
+
+        function handleSearch() {
+            const term = searchInput.value.toLowerCase().trim();
+            if (!term) {
+                searchResults.style.display = 'none';
+                displayedCount = 8;
+                renderProblems();
+                return;
+            }
+
+            const matches = problems.filter(p =>
+                p.title.toLowerCase().includes(term) ||
+                p.description.toLowerCase().includes(term)
+            );
+
+            searchResults.innerHTML = '';
+            if (!matches.length) {
+                searchResults.innerHTML = `
+                    <div class="search-result-item">
+                        <div class="result-title">No problems found</div>
+                        <div class="result-desc">Try: blue screen, slow, battery, display, charging...</div>
+                    </div>`;
+            } else {
+                matches.slice(0, 6).forEach(p => {
+                    const div = document.createElement('div');
+                    div.className = 'search-result-item';
+                    div.innerHTML = `
+                        <div class="result-title">${p.title}</div>
+                        <div class="result-desc">${p.description}</div>
+                        <div class="result-price">${p.price}</div>
+                    `;
+                    div.addEventListener('click', () => {
+                        searchInput.value = p.title;
+                        searchResults.style.display = 'none';
+                        focusProblem(p.id);
+                    });
+                    searchResults.appendChild(div);
+                });
+            }
+            searchResults.style.display = 'block';
+        }
+
+        function focusProblem(id) {
+            currentCategory = 'all';
+            tabButtons.forEach(b => b.classList.remove('active'));
+            document.querySelector('.tab-btn[data-category="all"]').classList.add('active');
+
+            displayedCount = problems.length;
+            renderProblems();
+
+            const card = document.getElementById(`problem-${id}`);
+            if (card) {
+                scrollToElement('.categories');
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const original = card.style.boxShadow;
+                    card.style.boxShadow = '0 0 0 3px #3498db80';
+                    setTimeout(() => { card.style.boxShadow = original; }, 1400);
+                }, 300);
+            }
+        }
+
+        function openWhatsApp(title) {
+            const text = `Hello Aman, I have a laptop issue: ${title}`;
+            const url = `https://api.whatsapp.com/send?phone=918228013326&text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
